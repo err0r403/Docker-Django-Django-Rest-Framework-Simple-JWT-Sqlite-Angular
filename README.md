@@ -26,15 +26,15 @@ Necesitas tener instalado [Docker][] y [Docker-Compose][].
 ## Opcional
 
 - Para desarrollo Backend puedes hacerlo codificando directo o corriendo sobre el Docker, de lo contrario necesitarás instalar [Python][]
- * En la ruta base del proyecto `/`
- * `pip install --upgrade pip`
- * `pip install  --no-cache-dir -r requirements.txt`
- * `python3 manage.py runserver 0.0.0.0:8000`
+ - En la ruta base del proyecto `/`
+ - `pip install --upgrade pip`
+ - `pip install  --no-cache-dir -r requirements.txt`
+ - `python3 manage.py runserver 0.0.0.0:8000`
  
 - Para desarrollo Frontend necesitarás [NodeJS][] y también [Angular][] `npm install -g @angular/cli`
- * `cd /static/frontend/`
- * `npm install`
- * `ng serve`
+ - `cd /static/frontend/`
+ - `npm install`
+ - `ng serve`
 
 [Angular]: https://angular.io/
 [Django]: https://www.djangoproject.com/
