@@ -1,0 +1,52 @@
+<main class="login-form">
+  <div class="hv-center container">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">Crear Ticket</div>
+        <div class="card-body">
+          <form [formGroup]="createTicketForm" (ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="author_id">Autor</label>
+              </div>
+              <select class="custom-select" formControlName="author_id" id="author_id" >
+                <option selected>Escoja...</option>
+                <option value="1">Administrador</option>
+                <option value="2">Superadmin</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" >Titulo</span>
+              </div>
+              <input type="text" class="form-control" formControlName="title" id="title">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Descripción</span>
+              </div>
+              <textarea class="form-control" formControlName="description" id="description"></textarea>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="state">Estado</label>
+              </div>
+              <select class="custom-select" formControlName="state" id="state">
+                <option selected>Escoja...</option>
+                <option value="OP">Abierto</option>
+                <option value="CL">Cerrado</option>
+                <option value="RE">Three</option>
+              </select>
+            </div>
+            <div class="cmb-3">
+              <button type="submit" class="btn btn-primary center w100">
+                Crear
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

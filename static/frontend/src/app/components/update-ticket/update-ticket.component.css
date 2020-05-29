@@ -1,0 +1,19 @@
+.hv-center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .login-form {
+    height: 100vh;
+  }
+  
+  .w100 {
+    width: 100%;
+  }
