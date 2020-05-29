@@ -9,18 +9,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['']">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li  *ngIf="getAccess()" class="nav-item" routerLinkActive="active">
+      <li *ngIf="getAccess()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['tickets']">Tickets</a>
       </li>
-      <li  *ngIf="!getAccess()" class="nav-item" routerLinkActive="active">
+      <li *ngIf="!getAccess()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['login']">Login</a>
       </li>
-      <li  class="nav-item" routerLinkActive="active">
+      <li *ngIf="getAccess()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" href="swagger">Swagger</a>
       </li>
-      <li  class="nav-item" routerLinkActive="active">
+      <li *ngIf="getAccess()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" href="api/tickets">DRF API</a>
       </li>
     </ul>
@@ -28,6 +28,6 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar ticket" aria-label="Search" #searchText (keyup.enter)="searchTicket(searchText.value)">
       <button (click)="searchTicket(searchText.value)" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
     </form>
-    <a href="my-2 my-lg-0 ml-3" (click)="logout()" *ngIf="getAccess()">Logout</a>
+    <a class="my-2 my-lg-0 ml-3 logout" (click)="logout()" *ngIf="getAccess()">Logout</a>
   </div>
 </nav>

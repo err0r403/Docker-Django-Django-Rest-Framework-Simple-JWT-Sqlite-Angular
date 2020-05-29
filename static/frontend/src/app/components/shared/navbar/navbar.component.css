@@ -1,3 +1,6 @@
 .ml-3 {
     margin-left: 1rem;
 }
+.logout a {
+    color: blue;
+}

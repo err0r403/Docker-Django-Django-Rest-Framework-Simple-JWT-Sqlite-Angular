@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
 
   public logout() {
     this.loginService.logout();
+    this.router.navigate(['']);
   }
 
   public getAccess() {
