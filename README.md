@@ -12,10 +12,11 @@ Necesitas tener instalado [Docker][] y [Docker-Compose][].
 `docker-compose build`.
 
 ## Migrar base de datos
+`docker-compose run --rm api python3 /srv/manage.py makemigrations`.
 `docker-compose run --rm api python3 /srv/manage.py migrate`.
 
 ## Cargar datos demo
-`docker-compose run --rm api python3 /srv/manage.py loaddata ./srv/fixtures/initial_data.json`
+`docker-compose run --rm api python3 /srv/manage.py loaddata /srv/fixtures/initial_data.json`
 
 ## Crear usuario administrador
 `docker-compose run --rm api python3 /srv/manage.py createsuperuser`
