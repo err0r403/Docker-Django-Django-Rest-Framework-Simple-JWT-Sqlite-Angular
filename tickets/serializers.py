@@ -7,11 +7,11 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username',)
+        fields = ('id', 'username', 'is_active',)
 
 
 class TicketSerializer(serializers.ModelSerializer):
-    author =  UserSerializer(many=False)
+    author =  UserSerializer(many=False, read_only=True)
     human_state = serializers.CharField(source='get_state_display', read_only=True)
 
     class Meta:

@@ -58,7 +58,7 @@ export class UpdateTicketComponent implements OnInit {
 
   onSubmit() {
     console.log('onSubmit update');
-    this.ticketsService.updateTicket(this.updateTicketForm.value).add((data) => {
+    this.ticketsService.updateTicket(this.updateTicketForm.value, this.ticket.id).add((data) => {
       console.log('update Res:', data);
     });
   }
