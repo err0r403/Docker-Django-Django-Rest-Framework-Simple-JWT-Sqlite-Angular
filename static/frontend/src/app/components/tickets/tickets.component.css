@@ -1,0 +1,24 @@
+.mw20 {
+    max-width: 20%;
+  }
+  
+  .new-btn {
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .ma {
+    margin:auto;
+  }
+  
+  .state {
+    color: white;
+    background-color: gray;
+    border: solid;
+    height: 64px;
+    line-height: 56px;
+  }
+  
+  .m5 {
+    margin: 5px;
+  }

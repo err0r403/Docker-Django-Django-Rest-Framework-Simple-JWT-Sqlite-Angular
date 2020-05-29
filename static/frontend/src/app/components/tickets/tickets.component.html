@@ -1,0 +1,33 @@
+<div class="row">
+<div class="col-sm-5">
+  <!--<div class="input-group m5">
+    <input  ng-model="searchText" class="form-control" placeholder="Escriba el filtro..." aria-label="Filter" aria-describedby="basic-addon1">
+  </div> -->
+  
+</div>
+<div class="col-sm-5 text-center ma">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+    <label class="form-check-label" for="inlineCheckbox1">Mis Tickets</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+    <label class="form-check-label" for="inlineCheckbox2">Sin asignar</label>
+  </div>
+</div>
+<div class="col-sm-2 ma">
+  <button type="button" class="btn btn-success text-right new-btn">Nuevo</button>
+</div>
+</div>
+<div class="row m5">
+<button class="state col mw20 text-center">Abierto</button>
+<button class="state col mw20 text-center">Pendiente</button>
+<button class="state col mw20 text-center">En Proceso</button>
+<button class="state col mw20 text-center">Resuelto</button>
+<button class="state col mw20 text-center">Cerrado</button>
+</div>
+ <app-ticket-card
+  (selectedTicket)="showTicket($event)"
+  [ticket]="ticket" [index]="ticket.id"
+  *ngFor="let ticket of tickets">
+ </app-ticket-card>

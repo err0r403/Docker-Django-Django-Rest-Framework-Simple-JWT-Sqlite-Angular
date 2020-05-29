@@ -1,0 +1,21 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Front</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="{% static '/frontend/dist/front/favicon.ico' %}">
+</head>
+<body>
+  <app-root></app-root>
+
+<script src="{% static '/frontend/dist/front/runtime.js' %}" type="module"></script>
+<script src="{% static '/frontend/dist/front/polyfills.js' %}" type="module"></script>
+<script src="{% static '/frontend/dist/front/styles.js' %}" type="module"></script>
+<script src="{% static '/frontend/dist/front/scripts.js' %}" defer></script>
+<script src="{% static '/frontend/dist/front/vendor.js' %}" type="module"></script>
+<script src="{% static '/frontend/dist/front/main.js' %}" type="module"></script></body>
+</html>

@@ -1,0 +1,19 @@
+
+  
+  .w100 {
+    width: 100%;
+  }
+  
+  .fl {
+    float: left;
+  }
+  .fr {
+    float: right;
+  }
+  
+  .ticket {
+    width: 100%;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+  }

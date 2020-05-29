@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: api:latest
+    restart: unless-stopped
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/srv
+    ports:
+      - "8000:8000"
