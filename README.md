@@ -3,7 +3,7 @@ Esta es una instalación [Docker][] para una SPA Angular con Rest Api en Django.
 
 - Proyecto Backend [Django][] Dependencias de [Python][] en el archivo requirements.txt
 - Proyecto Frontend [Angular][] `/static/frontend/` y dependencias en el archivo package.json
-- 
+
 ## Requisitos 
 Necesitas tener instalado [Docker][] y [Docker-Compose][].
 
