@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class TicketsComponent implements OnInit {
   public tickets: TicketsInterface[];
+  public permissions: any;
 
   constructor(
     private loginService: LoginService,
@@ -28,6 +29,8 @@ export class TicketsComponent implements OnInit {
         document.title = 'Tickets';
         this.ticketsService.getTickets()
             .subscribe((tickets: TicketsInterface[]) => this.tickets = tickets);
+        this.ticketsService.getMyAccount()
+            .subscribe((permissions: any) => this.permissions = permissions);
       }
     }, (e) => {
       this.router.navigate(['/login']);
@@ -38,4 +41,19 @@ export class TicketsComponent implements OnInit {
   public showTicket(index: number): void {
     this.router.navigate(['/ticket', index]);
   }
+
+  public myTickets(e) {
+    if (e.target.checked) {
+      this.ticketsService.getMyTickets()
+            .subscribe((tickets: TicketsInterface[]) => this.tickets = tickets);
+    } else {
+      this.ticketsService.getTickets()
+      .subscribe((tickets: TicketsInterface[]) => this.tickets = tickets);
+    }
+  }
+
+  public searchTickets(term: string, filter: string) {
+    this.router.navigate(['/search', term], { queryParams: {filter}});
+  }
+
 }

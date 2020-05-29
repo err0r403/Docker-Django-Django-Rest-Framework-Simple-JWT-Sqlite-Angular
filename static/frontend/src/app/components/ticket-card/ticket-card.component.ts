@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
+import { TicketsService } from 'src/app/services/tickets.service';
 
 
 
@@ -9,17 +10,23 @@ import {Router} from '@angular/router';
   styleUrls: ['./ticket-card.component.css']
 })
 export class TicketCardComponent implements OnInit {
+  public permissions: any;
 
   @Input() ticket: any = {};
   @Input() index: number;
 
   @Output() selectedTicket: EventEmitter<number>;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private ticketsService: TicketsService
+    ) {
     this.selectedTicket = new EventEmitter();
   }
 
   ngOnInit(): void {
+    this.ticketsService.getMyAccount()
+        .subscribe((permissions: any) => this.permissions = permissions);
   }
 
   public showTicket(): void {

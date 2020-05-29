@@ -21,9 +21,18 @@ export class TicketsService {
     console.log('-.-');
   }
 
+  private myAccountUrl = 'http://127.0.0.1:8000/api/my-account/';
+  public getMyAccount(): Observable<any> {
+    return this.http.get<any>(this.myAccountUrl, httpOptions);
+  }
+
   private ticketsUrl = 'http://127.0.0.1:8000/api/tickets/';
   public getTickets(): Observable<TicketsInterface[]> {
     return this.http.get<TicketsInterface[]>(this.ticketsUrl, httpOptions);
+  }
+
+  public getMyTickets(): Observable<TicketsInterface[]> {
+    return this.http.get<TicketsInterface[]>(this.ticketsUrl + '?my-tickets=1', httpOptions);
   }
 
   public getTicket(id: string): Observable<TicketsInterface> {
@@ -41,14 +50,15 @@ export class TicketsService {
     return this.http.post(this.ticketsUrl, ticket);
   }
 
-  public updateTicket(ticket: {}): Subscription {
-    return this.update(ticket).subscribe((data) => {
+  public updateTicket(ticket: {}, id: number): Subscription {
+    return this.update(ticket, id).subscribe((data) => {
 
     });
   }
 
-  public update(ticket: {}): Observable<any> {
-    return this.http.patch(this.ticketsUrl, ticket);
+  public update(ticket: {}, id: number): Observable<any> {
+    const ticketUrl = `${this.ticketsUrl}${id}/`;
+    return this.http.patch(ticketUrl, ticket);
   }
 
   public searchTicketAndFilter(term: string, filter: string) {
