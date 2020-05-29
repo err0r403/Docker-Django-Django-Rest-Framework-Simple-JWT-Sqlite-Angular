@@ -17,6 +17,7 @@ import {TicketsService} from './services/tickets.service';
 import { NoopInterceptor } from './http-interceptors/noop-interceptor';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TicketsComponent,
     SearchComponent,
     NavbarComponent,
-    TicketCardComponent
+    TicketCardComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
