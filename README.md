@@ -16,6 +16,7 @@ Necesitas tener instalado [Docker][] y [Docker-Compose][].
 
 ## Cargar datos demo
 `python manage.py syncdb`
+`docker-compose run --rm api python3 /srv/manage.py loaddata ./srv/fixtures/initial_data.json`
 
 ## Crear usuario administrador
 `docker-compose run --rm api python3 /srv/manage.py createsuperuser`
