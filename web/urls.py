@@ -34,14 +34,14 @@ router.register(r'tickets', TicketViewSet, 'api-ticket')
 
 
 urlpatterns = [
-    path('tickets/', include('tickets.urls')),
     path('admin/', admin.site.urls),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/', include(router.urls)),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('api/', include(router.urls)),
-    path('', TemplateView.as_view(template_name='index.html'), name="home"),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    url(r'^.*/$', TemplateView.as_view(template_name='index.html'), name="ticket_app"),
+    path('', TemplateView.as_view(template_name='index.html'), name="ticket_app"),
 ]
