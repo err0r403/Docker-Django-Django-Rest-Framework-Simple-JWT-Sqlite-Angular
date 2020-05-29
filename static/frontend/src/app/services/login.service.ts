@@ -15,7 +15,7 @@ export class LoginService {
   private tokenUrl = 'http://127.0.0.1:8000/api/token/';
   private verifyUrl = 'http://127.0.0.1:8000/api/token/verify/';
 
-  public login(credentials: {}): Subscription{
+  public login(credentials: {}): Subscription {
     return this.getToken(credentials).subscribe((data) => {
       localStorage.setItem('access', data.access);
       localStorage.setItem('refresh', data.refresh);

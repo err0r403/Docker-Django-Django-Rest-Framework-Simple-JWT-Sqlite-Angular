@@ -6,8 +6,9 @@ class Ticket(models.Model):
     author = models.ForeignKey(
         User, 
         on_delete=models.CASCADE,
-        related_name='users'
+        related_name='users',
         )
+        
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=1020)
 

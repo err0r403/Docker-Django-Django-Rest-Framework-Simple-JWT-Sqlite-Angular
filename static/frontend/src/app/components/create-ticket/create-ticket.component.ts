@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class CreateTicketComponent implements OnInit {
 
   createTicketForm = new FormGroup({
-    author_id: new FormControl(''),
     title: new FormControl(''),
     description: new FormControl(''),
     state: new FormControl(''),

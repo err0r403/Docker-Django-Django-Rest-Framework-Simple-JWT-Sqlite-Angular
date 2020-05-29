@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {TicketsInterface} from '../interfaces/tickets.interface';
 import { Observable } from 'rxjs/internal/Observable';
+import { Subscription } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,14 +21,34 @@ export class TicketsService {
     console.log('-.-');
   }
 
-  private ticketsUrl = 'http://127.0.0.1:8000/api/tickets';
+  private ticketsUrl = 'http://127.0.0.1:8000/api/tickets/';
   public getTickets(): Observable<TicketsInterface[]> {
     return this.http.get<TicketsInterface[]>(this.ticketsUrl, httpOptions);
   }
 
-  public getTicket(id: string): TicketsInterface {
-    return this.tickets
-      .find(ticket => ticket.id === parseInt(id, 10));
+  public getTicket(id: string): Observable<TicketsInterface> {
+    const ticketUrl = `${this.ticketsUrl}${id}`;
+    return this.http.get<TicketsInterface>(ticketUrl, httpOptions);
+  }
+
+  public createTicket(ticket: {}): Subscription {
+    return this.create(ticket).subscribe((data) => {
+
+    });
+  }
+
+  public create(ticket: {}): Observable<any> {
+    return this.http.post(this.ticketsUrl, ticket);
+  }
+
+  public updateTicket(ticket: {}): Subscription {
+    return this.update(ticket).subscribe((data) => {
+
+    });
+  }
+
+  public update(ticket: {}): Observable<any> {
+    return this.http.patch(this.ticketsUrl, ticket);
   }
 
   public searchTicketAndFilter(term: string, filter: string) {

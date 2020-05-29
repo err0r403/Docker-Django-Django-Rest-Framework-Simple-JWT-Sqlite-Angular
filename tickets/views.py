@@ -11,17 +11,3 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return the last five tickets."""
         return Ticket.objects.order_by('-created_at')[:5]
-
-class DetailView(generic.DetailView):
-    model = Ticket
-    template_name = 'tickets/detail.html'
-
-class CreateView(generic.CreateView):
-    model = Ticket
-    fields = ['author', 'title', 'description', 'state']
-    template_name = 'tickets/create.html'   
-
-class UpdateView(generic.UpdateView):
-    model = Ticket
-    fields = ['author', 'title', 'description', 'state']
-    template_name = 'tickets/update.html'     

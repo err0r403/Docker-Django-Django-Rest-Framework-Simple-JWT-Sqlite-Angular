@@ -7,17 +7,6 @@
           <form [formGroup]="createTicketForm" (ngSubmit)="onSubmit()">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="author_id">Autor</label>
-              </div>
-              <select class="custom-select" formControlName="author_id" id="author_id" >
-                <option selected>Escoja...</option>
-                <option value="1">Administrador</option>
-                <option value="2">Superadmin</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
                 <span class="input-group-text" >Titulo</span>
               </div>
               <input type="text" class="form-control" formControlName="title" id="title">
@@ -36,7 +25,9 @@
                 <option selected>Escoja...</option>
                 <option value="OP">Abierto</option>
                 <option value="CL">Cerrado</option>
-                <option value="RE">Three</option>
+                <option value="PE">Pendiente</option>
+                <option value="IP">En Proceso</option>
+                <option value="RE">Resuelto</option>
               </select>
             </div>
             <div class="cmb-3">

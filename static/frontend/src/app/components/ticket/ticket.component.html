@@ -1,3 +1,9 @@
-<p>
-  ticket works!
-</p>
+
+  <div class="container">
+          <div class="card ticket w100">
+              <small class="text-right fr">#{{ticket.id}} | {{ticket.created_at | dateAgo}}</small>
+              <h3><a href="#">{{ticket.title}}</a></h3>
+              <p>{{ticket.description}}</p>
+              <div class="text-left fl"><strong>Autor:</strong> {{ticket.author.username}}</div> <div class="text-right fr"><strong>Estado:</strong> {{ticket.human_state}}</div>
+          </div>
+  </div>
