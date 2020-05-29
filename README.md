@@ -15,7 +15,7 @@ Necesitas tener instalado [Docker][] y [Docker-Compose][].
 `docker-compose run --rm api python3 /srv/manage.py migrate`.
 
 ## Cargar datos demo
-`python manage.py syncdb`
+`docker-compose run --rm api python /srv/manage.py syncdb`
 
 ## Crear usuario administrador
 `docker-compose run --rm api python3 /srv/manage.py createsuperuser`
