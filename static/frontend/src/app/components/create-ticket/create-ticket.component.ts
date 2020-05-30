@@ -29,6 +29,7 @@ export class CreateTicketComponent implements OnInit {
     console.log('onSubmit create');
     this.ticketsService.createTicket(this.createTicketForm.value).add((data) => {
       console.log('create Res:', data);
+      this.router.navigate(['/tickets']);
     });
     }
   }
